@@ -36,7 +36,7 @@ module ControlUnit (
                     {3'b000, 7'h20}: alu_op = 4'b0001; // SUB
                     {3'b001, 7'h00}: alu_op = 4'b0101; // SLL
                     {3'b010, 7'h00}: alu_op = 4'b1000; // SLT
-                    {3'b011, 7'h00}: alu_op = 4'b1009; // SLTU
+                    {3'b011, 7'h00}: alu_op = 4'b1001; // SLTU
                     {3'b100, 7'h00}: alu_op = 4'b0100; // XOR
                     {3'b101, 7'h00}: alu_op = 4'b0110; // SRL
                     {3'b101, 7'h20}: alu_op = 4'b0111; // SRA
@@ -55,7 +55,7 @@ module ControlUnit (
                     3'b001: alu_op = 4'b0101; // SLLI
                     3'b101: alu_op = (funct7 == 7'h00) ? 4'b0110 : 4'b0111; // SRLI, SRAI
                     3'b010: alu_op = 4'b1000; // SLTI
-                    3'b011: alu_op = 4'b1009; // SLTIU
+                    3'b011: alu_op = 4'b1001; // SLTIU
                 endcase
             end
             7'b0000011: begin // Lệnh Load (LW)
